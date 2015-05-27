@@ -13,7 +13,7 @@ public class ConexionDB {
 	private static final String HOST="localhost";
 	private static final String BBDD="thelaby";
 	private static final String USER="root";
-	private static final String PASS="";
+	private static final String PASS="tonphp";
 	
 	//DATOS DE LA BBDD
 	private String host;
@@ -23,7 +23,7 @@ public class ConexionDB {
 	private String url;
 	
 	//Conexion
-	private static Connection conexion = null;// maneja la conexió
+	private static Connection conexion = null;// maneja la conexiï¿½
 	
 	//Instancia unica
 	private static ConexionDB instance = null;
@@ -39,16 +39,17 @@ public class ConexionDB {
 	//Implementar SingleTon
 	public static ConexionDB getInstance(String HOST,String BBDD,String USER,String PASS) {
 	      if(instance == null) {
-	         instance = null;
+	         instance = new ConexionDB(HOST, BBDD, USER, PASS);
+
 	      }
 	      return instance;
 	   }
-	//Este método es el mismo que el anterior pero no es necesario
-	//pasar parámetros de base de datos ya que toma los
+	//Este mï¿½todo es el mismo que el anterior pero no es necesario
+	//pasar parï¿½metros de base de datos ya que toma los
 	//valores por defecto
 	public static ConexionDB getInstance() {
 	      if(instance == null) {
-	         instance = null;
+	         instance = new ConexionDB(HOST, BBDD, USER, PASS);
 	      }
 	      return instance;
 	  }
@@ -56,7 +57,7 @@ public class ConexionDB {
 	//Metodo que permite la conexion a la base de datos
 	public boolean connectDB(){
 		try{
-			//Lo primero es cargar el controlador MySQL el cual automáticamente se registra
+			//Lo primero es cargar el controlador MySQL el cual automï¿½ticamente se registra
 			Class.forName(CONTROLADOR_MYSQL);
 			//Conectarnos a la BBDD
 			conexion = DriverManager.getConnection(this.url,this.user,this.pass);
