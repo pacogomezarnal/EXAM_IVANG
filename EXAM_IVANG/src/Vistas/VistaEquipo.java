@@ -50,66 +50,66 @@ public class VistaEquipo extends JPanel {
 	
 	private void etiquetas(){
 		JLabel lblEquipo = new JLabel("Equipo");
-		lblEquipo.setBounds(18, 35, 61, 16);
-		add(lblEquipo);
+			lblEquipo.setBounds(18, 35, 61, 16);
+				add(lblEquipo);
 		
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(208, 35, 61, 16);
-		add(lblNombre);
+			lblNombre.setBounds(208, 35, 61, 16);
+				add(lblNombre);
 		
 		JLabel lblId = new JLabel("Id");
-		lblId.setBounds(390, 35, 61, 16);
-		add(lblId);
+			lblId.setBounds(390, 35, 61, 16);
+				add(lblId);
 		
 		JLabel lbl1Apellido = new JLabel("1er Apellido");
-		lbl1Apellido.setBounds(208, 117, 101, 16);
-		add(lbl1Apellido);
+			lbl1Apellido.setBounds(208, 117, 101, 16);
+				add(lbl1Apellido);
 		
 		JLabel lblNewLabel = new JLabel("2º Apellido");
-		lblNewLabel.setBounds(208, 181, 101, 16);
-		add(lblNewLabel);
+			lblNewLabel.setBounds(208, 181, 101, 16);
+				add(lblNewLabel);
 		
 		JLabel lblNacionalidad = new JLabel("Nacionalidad");
-		lblNacionalidad.setBounds(208, 262, 101, 16);
-		add(lblNacionalidad);
+			lblNacionalidad.setBounds(208, 262, 101, 16);
+				add(lblNacionalidad);
 	}
 	
 	private void camposTexto(){
 		textFieldNombre = new JTextField();
 		textFieldNombre.setEditable(false);
 		textFieldNombre.setBounds(208, 65, 134, 28);
-		add(textFieldNombre);
+			add(textFieldNombre);
 		textFieldNombre.setColumns(10);
 		
 		textFieldId = new JTextField();
 		textFieldId.setEditable(false);
 		textFieldId.setBounds(390, 65, 91, 28);
-		add(textFieldId);
+			add(textFieldId);
 		textFieldId.setColumns(10);
 		
 		textField1Apellido = new JTextField();
 		textField1Apellido.setEditable(false);
 		textField1Apellido.setBounds(208, 141, 134, 28);
-		add(textField1Apellido);
+			add(textField1Apellido);
 		textField1Apellido.setColumns(10);
 		
 		textField2Apellido = new JTextField();
 		textField2Apellido.setEditable(false);
 		textField2Apellido.setBounds(208, 209, 134, 28);
-		add(textField2Apellido);
+			add(textField2Apellido);
 		textField2Apellido.setColumns(10);
 		
 		textFieldNacionalidad = new JTextField();
 		textFieldNacionalidad.setEditable(false);
 		textFieldNacionalidad.setBounds(208, 290, 134, 28);
-		add(textFieldNacionalidad);
+			add(textFieldNacionalidad);
 		textFieldNacionalidad.setColumns(10);
 	}
 	
 	private void comboBox(){
 		
 		comboBoxEquipos = new JComboBox();
-		reloadComboBox();
+			reloadComboBox();
 		
 		comboBoxEquipos.addActionListener(new ActionListener() {
 			
@@ -124,14 +124,14 @@ public class VistaEquipo extends JPanel {
 		});
 		
 		comboBoxEquipos.setBounds(18, 67, 160, 27);
-		comboBoxEquipos.setSelectedIndex(0);
-		add(comboBoxEquipos);
+			comboBoxEquipos.setSelectedIndex(0);
+				add(comboBoxEquipos);
 	}
 	
 	private void reloadComboBox(){
 		DefaultComboBoxModel modelo = new DefaultComboBoxModel(cc.loadCadetes().toArray());
-		comboBoxEquipos.setModel(modelo);
-		comboBoxEquipos.repaint();
+			comboBoxEquipos.setModel(modelo);
+				comboBoxEquipos.repaint();
 	}
 	
 	private void botones(){
@@ -151,7 +151,7 @@ public class VistaEquipo extends JPanel {
 			}
 		});
 		btnSiguiente.setBounds(364, 334, 117, 29);
-		add(btnSiguiente);
+			add(btnSiguiente);
 	}
 	
 	private void botonAtras(){
