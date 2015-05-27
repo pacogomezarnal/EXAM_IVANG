@@ -29,9 +29,10 @@ public class VistaUsuario extends JPanel {
 	
 	public VistaUsuario(Ventana v) {
 		setLayout(null);
-		this.setBounds(100, 100, 500, 400);
-		this.ventana=v;
-		cc = new CadeteController();
+			this.setBounds(100, 100, 500, 400);
+				this.ventana=v;
+		
+				cc = new CadeteController();
 
 		etiquetas();	
 		cTxt();
@@ -40,29 +41,29 @@ public class VistaUsuario extends JPanel {
 	
 	private void etiquetas(){
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(203, 32, 61, 16);
-		add(lblNombre);
+			lblNombre.setBounds(203, 32, 61, 16);
+				add(lblNombre);
 		
 		JLabel lblId = new JLabel("Id");
-		lblId.setBounds(386, 32, 61, 16);
-		add(lblId);
+			lblId.setBounds(386, 32, 61, 16);
+				add(lblId);
 		
 		JLabel lblApellidos = new JLabel("Apellidos");
-		lblApellidos.setBounds(203, 92, 75, 16);
-		add(lblApellidos);
-		
+			lblApellidos.setBounds(203, 92, 75, 16);
+				add(lblApellidos);
+				
 		JLabel lblEdad = new JLabel("Edad");
-		lblEdad.setBounds(203, 150, 61, 16);
-		add(lblEdad);
+			lblEdad.setBounds(203, 150, 61, 16);
+				add(lblEdad);
 		
 		JLabel lblNacionalidad = new JLabel("Nacionalidad");
-		lblNacionalidad.setBounds(203, 211, 101, 16);
-		add(lblNacionalidad);
+			lblNacionalidad.setBounds(203, 211, 101, 16);
+				add(lblNacionalidad);
 		
 		JLabel foto = new JLabel("");
-		foto.setIcon(new ImageIcon(VistaUsuario.class.getResource("/Img/usuario.png")));
-		foto.setBounds(6, 32, 183, 235);
-		add(foto);
+			foto.setIcon(new ImageIcon(VistaUsuario.class.getResource("/Img/usuario.png")));
+				foto.setBounds(6, 32, 183, 235);
+					add(foto);
 	}
 	
 	private void cTxt(){
@@ -104,18 +105,19 @@ public class VistaUsuario extends JPanel {
 	
 	private void botones(){
 		JButton btnSiguiente = new JButton("Siguiente >>");
-		btnSiguiente.addActionListener(new ActionListener() {
+				btnSiguiente.addActionListener(new ActionListener() {
+	
 			public void actionPerformed(ActionEvent e) {
 				botonSiguiente();
 			}
 		});
 		
 		btnSiguiente.setBounds(344, 334, 117, 29);
-		add(btnSiguiente);
+			add(btnSiguiente);
 	}
 	
 	private void botonSiguiente(){
 		CardLayout layout = (CardLayout) ventana.getContentPane().getLayout();
-		layout.show(ventana.getContentPane(), "PanelEquipo");
+			layout.show(ventana.getContentPane(), "PanelEquipo");
 	}
 }
