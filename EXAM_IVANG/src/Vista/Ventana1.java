@@ -7,11 +7,11 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class Ventana1 extends JPanel {
-	private JTextField enombre;
-	private JTextField eid;
-	private JTextField eapellidos;
-	private JTextField eedad;
-	private JTextField enacionalidad;
+	private JTextField cnombre;
+	private JTextField cid;
+	private JTextField capellidos;
+	private JTextField cedad;
+	private JTextField cnacionalidad;
 
 	/**
 	 * Create the panel.
@@ -44,34 +44,34 @@ public class Ventana1 extends JPanel {
 		tnacionalidad.setBounds(184, 196, 84, 14);
 		add(tnacionalidad);
 		
-		enombre = new JTextField();
-		enombre.setEditable(false);
-		enombre.setBounds(182, 53, 86, 20);
-		add(enombre);
-		enombre.setColumns(10);
+		cnombre = new JTextField();
+		cnombre.setEditable(false);
+		cnombre.setBounds(182, 53, 86, 20);
+		add(cnombre);
+		cnombre.setColumns(10);
 		
-		eid = new JTextField();
-		eid.setBounds(321, 53, 86, 20);
-		add(eid);
-		eid.setColumns(10);
+		cid = new JTextField();
+		cid.setBounds(321, 53, 86, 20);
+		add(cid);
+		cid.setColumns(10);
 		
-		eapellidos = new JTextField();
-		eapellidos.setEditable(false);
-		eapellidos.setBounds(184, 109, 86, 20);
-		add(eapellidos);
-		eapellidos.setColumns(10);
+		capellidos = new JTextField();
+		capellidos.setEditable(false);
+		capellidos.setBounds(184, 109, 86, 20);
+		add(capellidos);
+		capellidos.setColumns(10);
 		
-		eedad = new JTextField();
-		eedad.setEditable(false);
-		eedad.setBounds(184, 165, 86, 20);
-		add(eedad);
-		eedad.setColumns(10);
+		cedad = new JTextField();
+		cedad.setEditable(false);
+		cedad.setBounds(184, 165, 86, 20);
+		add(cedad);
+		cedad.setColumns(10);
 		
-		enacionalidad = new JTextField();
-		enacionalidad.setEditable(false);
-		enacionalidad.setBounds(184, 221, 86, 20);
-		add(enacionalidad);
-		enacionalidad.setColumns(10);
+		cnacionalidad = new JTextField();
+		cnacionalidad.setEditable(false);
+		cnacionalidad.setBounds(184, 221, 86, 20);
+		add(cnacionalidad);
+		cnacionalidad.setColumns(10);
 		
 		JButton bsiguiente = new JButton("Siguiente");
 		bsiguiente.setBounds(318, 263, 89, 23);
