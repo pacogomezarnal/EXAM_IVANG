@@ -18,14 +18,14 @@ public class VistaComprobacion extends JPanel {
 	private JTextField txtMD;
 	
 	private Ventana ventana;
-	private IngresoLaby iLaby;
+	private IngresoLaby ingreso;
 	private String valreturn;
 
 	public VistaComprobacion(Ventana v) {
 		this.setBounds(100, 100, 500, 400);
 			setLayout(null);
 				this.ventana=v;
-					iLaby = new IngresoLaby();
+					ingreso = new IngresoLaby();
 		etq();
 		camposTexto();
 		btns();
@@ -85,7 +85,7 @@ public class VistaComprobacion extends JPanel {
 	}
 	
 	private void btnComp(){
-		valreturn = iLaby.getCod(Integer.parseInt(txtFID.getText()), tct1App.getText());
+		valreturn = ingreso.getCod(Integer.parseInt(txtFID.getText()), tct1App.getText());
 			txtMD.setText(valreturn);
 	}
 	

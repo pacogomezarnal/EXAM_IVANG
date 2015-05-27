@@ -18,15 +18,15 @@ import Modelo.Cadete;
 
 public class VistaEquipo extends JPanel {
 
-	private JTextField textFieldNombre;
+	private JTextField txtFNom;
 	private JTextField textFieldId;
 	private JTextField textField1Apellido;
 	private JTextField textField2Apellido;
-	private JTextField textFieldNacionalidad;
-	private JComboBox comboBoxEquipos;
-	private Cadete cadeteSeleccionado;
+	private JTextField txtFNacionalidad;
+	private JComboBox cmbxEquipos;
+	private Cadete cadSel;
 	
-	private ArrayList<String> apellidosCadete;
+	private ArrayList<String> apellidosCad;
 	
 	private Ventana ventana;
 	private CadeteController cc;
@@ -40,7 +40,7 @@ public class VistaEquipo extends JPanel {
 		this.ventana=v;
 	
 		cc = new CadeteController();
-		apellidosCadete = new ArrayList<String>();
+		apellidosCad = new ArrayList<String>();
 		
 		etiquetas();
 		camposTexto();
@@ -75,11 +75,11 @@ public class VistaEquipo extends JPanel {
 	}
 	
 	private void camposTexto(){
-		textFieldNombre = new JTextField();
-		textFieldNombre.setEditable(false);
-		textFieldNombre.setBounds(208, 65, 134, 28);
-			add(textFieldNombre);
-		textFieldNombre.setColumns(10);
+		txtFNom = new JTextField();
+		txtFNom.setEditable(false);
+		txtFNom.setBounds(208, 65, 134, 28);
+			add(txtFNom);
+		txtFNom.setColumns(10);
 		
 		textFieldId = new JTextField();
 		textFieldId.setEditable(false);
@@ -99,39 +99,39 @@ public class VistaEquipo extends JPanel {
 			add(textField2Apellido);
 		textField2Apellido.setColumns(10);
 		
-		textFieldNacionalidad = new JTextField();
-		textFieldNacionalidad.setEditable(false);
-		textFieldNacionalidad.setBounds(208, 290, 134, 28);
-			add(textFieldNacionalidad);
-		textFieldNacionalidad.setColumns(10);
+		txtFNacionalidad = new JTextField();
+		txtFNacionalidad.setEditable(false);
+		txtFNacionalidad.setBounds(208, 290, 134, 28);
+			add(txtFNacionalidad);
+		txtFNacionalidad.setColumns(10);
 	}
 	
 	private void comboBox(){
 		
-		comboBoxEquipos = new JComboBox();
+		cmbxEquipos = new JComboBox();
 			reloadComboBox();
 		
-		comboBoxEquipos.addActionListener(new ActionListener() {
+		cmbxEquipos.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				cadeteSeleccionado = (Cadete) comboBoxEquipos.getSelectedItem();
+				cadSel = (Cadete) cmbxEquipos.getSelectedItem();
 
 				
 				Volcar();
 			}
 		});
 		
-		comboBoxEquipos.setBounds(18, 67, 160, 27);
-			comboBoxEquipos.setSelectedIndex(0);
-				add(comboBoxEquipos);
+		cmbxEquipos.setBounds(18, 67, 160, 27);
+			cmbxEquipos.setSelectedIndex(0);
+				add(cmbxEquipos);
 	}
 	
 	private void reloadComboBox(){
 		DefaultComboBoxModel modelo = new DefaultComboBoxModel(cc.loadCadetes().toArray());
-			comboBoxEquipos.setModel(modelo);
-				comboBoxEquipos.repaint();
+			cmbxEquipos.setModel(modelo);
+				cmbxEquipos.repaint();
 	}
 	
 	private void botones(){
@@ -165,19 +165,19 @@ public class VistaEquipo extends JPanel {
 	}
 	
 	private void Volcar(){
-		textFieldNombre.setText(this.cadeteSeleccionado.getNombre());
-		textFieldId.setText(String.valueOf(this.cadeteSeleccionado.getId()));
-		dividirString(this.cadeteSeleccionado.getApellidos());
-		textFieldNacionalidad.setText(this.cadeteSeleccionado.getNacionalidad());
+		txtFNom.setText(this.cadSel.getNombre());
+		textFieldId.setText(String.valueOf(this.cadSel.getId()));
+		dividirString(this.cadSel.getApellidos());
+		txtFNacionalidad.setText(this.cadSel.getNacionalidad());
 	}
 	
 	private void dividirString(String apellidos){
 		StringTokenizer division = new StringTokenizer(apellidos);
 		while(division.hasMoreTokens()){
-			this.apellidosCadete.add(division.nextToken());
+			this.apellidosCad.add(division.nextToken());
 		}
-		textField1Apellido.setText(this.apellidosCadete.get(0));
-		textField2Apellido.setText(this.apellidosCadete.get(1));
-		this.apellidosCadete.removeAll(apellidosCadete);
+		textField1Apellido.setText(this.apellidosCad.get(0));
+		textField2Apellido.setText(this.apellidosCad.get(1));
+		this.apellidosCad.removeAll(apellidosCad);
 	}
 }
