@@ -24,7 +24,7 @@ public class VistaUsuario extends JPanel {
 	
 	private Ventana ventana;
 	private Cadete miCadete;
-	private CadeteController cc;
+	private CadeteController c;
 
 	
 	public VistaUsuario(Ventana v) {
@@ -32,7 +32,7 @@ public class VistaUsuario extends JPanel {
 			this.setBounds(100, 100, 500, 400);
 				this.ventana=v;
 		
-				cc = new CadeteController();
+				c = new CadeteController();
 
 		etiquetas();	
 		cTxt();
@@ -71,35 +71,35 @@ public class VistaUsuario extends JPanel {
 		txtFNom.setEditable(false);
 		txtFNom.setBounds(203, 52, 134, 28);
 		add(txtFNom);
-		txtFNom.setText(cc.loadMiCadete().getNombre());
+		txtFNom.setText(c.loadMiCadete().getNombre());
 		txtFNom.setColumns(10);
 		
 		txtFId = new JTextField();
 		txtFId.setEditable(false);
 		txtFId.setBounds(386, 52, 75, 28);
 		add(txtFId);
-		txtFId.setText(String.valueOf(cc.loadMiCadete().getId()));
+		txtFId.setText(String.valueOf(c.loadMiCadete().getId()));
 		txtFId.setColumns(10);
 		
 		txtFApll = new JTextField();
 		txtFApll.setEditable(false);
 		txtFApll.setBounds(203, 110, 134, 28);
 		add(txtFApll);
-		txtFApll.setText(cc.loadMiCadete().getApellidos());
+		txtFApll.setText(c.loadMiCadete().getApellidos());
 		txtFApll.setColumns(10);
 		
 		txtFed = new JTextField();
 		txtFed.setEditable(false);
 		txtFed.setBounds(203, 171, 134, 28);
 		add(txtFed);
-		txtFed.setText(String.valueOf(cc.loadMiCadete().getEdad()));
+		txtFed.setText(String.valueOf(c.loadMiCadete().getEdad()));
 		txtFed.setColumns(10);
 		
 		txtFNac = new JTextField();
 		txtFNac.setEditable(false);
 		txtFNac.setBounds(203, 239, 134, 28);
 		add(txtFNac);
-		txtFNac.setText(cc.loadMiCadete().getNacionalidad());
+		txtFNac.setText(c.loadMiCadete().getNacionalidad());
 		txtFNac.setColumns(10);
 	}
 	
