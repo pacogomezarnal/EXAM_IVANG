@@ -12,24 +12,25 @@ public class IngresoLaby {
 	private final static String COD_COL="cod";
 	
 	//Conexion
-	private Connection conexion = null;// maneja la conexió
+	private Connection conexion = null;// maneja la conexion
 	private Statement instruccion = null;
-	private ResultSet conjuntoResultados = null;
+	private ResultSet resultados = null;
 
 	public IngresoLaby() {
 		//Obtenemos la conexion de datos
-		conexion=ConexionDB.getConexion();		
+		ConexionDB con = ConexionDB.getInstance();
+		conexion = con.getConexion();	
 	}
 	
 	public String getCod(int id,String apellido){
 		try{
 			String cod="";
 			instruccion = this.conexion.createStatement();
-			conjuntoResultados = instruccion.executeQuery(CHECK_SEL+String.valueOf(id));
+			resultados = instruccion.executeQuery(CHECK_SEL+String.valueOf(id));
 			
-			//Listaremos por pantalla los datos
-			while(conjuntoResultados.next() ) {
-				if(apellido.equals(conjuntoResultados.getString(COD_COL))) cod="CODIGO CORRECTO ENHORABUENA. LLAMA A TU INSTRUCTOR";
+
+			while(resultados.next() ) {
+				if(apellido.equals(resultados.getString(COD_COL))) cod="CODIGO CORRECTO ENHORABUENA. LLAMA A TU INSTRUCTOR";
 				else return cod="CODIGO INCORRECTO COMPRUEBA TODOS LOS PASOS";
 			}// fin de while
 			return cod;
@@ -41,7 +42,7 @@ public class IngresoLaby {
 		}
 		finally{
 			try{
-				conjuntoResultados.close();
+				resultados.close();
 				instruccion.close();
 			}
 			catch( SQLException excepcionSql ) 

@@ -1,33 +1,30 @@
 package Modelo;
 
-//Clase que almacenará todos los datos de un cadete
+//Clase que almacenara todos los datos de un cadete
 public class Cadete {
-	//Propiedades
-	private int id=0;
-	private String nombre="";
-	private String apellidos="";
-	private int edad=0; 
-	private String nacionalidad="";
-	private int equipo=0; 
-
-	//Constructores
-	public Cadete() {
-		
-	}
+	// Propiedades
 	
-	public Cadete(int id,
-				  String nombre,
-				  String apellidos,
-				  int edad,
-				  String nacionalidad,
-				  int equipo) {
-		this.id=id;
-		this.nombre=nombre;
-		this.apellidos=apellidos;
-		this.edad=edad;
-		this.nacionalidad=nacionalidad;
-		this.equipo=equipo;
-		
+	private int id = 0;
+	private String nombre = "";
+	private String apellidos = "";
+	private int edad = 0;
+	private String nacionalidad = "";
+	private int equipo = 0;
+
+	// Constructores
+	public Cadete() {
+
+	}
+
+	public Cadete(int id, String nombre, String apellidos, int edad,
+			String nacionalidad, int equipo) {
+		this.id = id;
+			this.nombre = nombre;
+				this.apellidos = apellidos;
+					this.edad = edad;
+						this.nacionalidad = nacionalidad;
+							this.equipo = equipo;
+
 	}
 
 	public int getId() {
@@ -54,12 +51,12 @@ public class Cadete {
 		this.apellidos = apellidos;
 	}
 
-	public int getEdad() {
-		return edad;
+	public int getEquipo() {
+		return equipo;
 	}
 
-	public void setEdad(int edad) {
-		this.edad = edad;
+	public void setEquipo(int equipo) {
+		this.equipo = equipo;
 	}
 
 	public String getNacionalidad() {
@@ -70,12 +67,12 @@ public class Cadete {
 		this.nacionalidad = nacionalidad;
 	}
 
-	public int getEquipo() {
-		return equipo;
+	public int getEdad() {
+		return edad;
 	}
 
-	public void setEquipo(int equipo) {
-		this.equipo = equipo;
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}
 
 }
